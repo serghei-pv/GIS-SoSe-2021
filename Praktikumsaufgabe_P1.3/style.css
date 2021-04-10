@@ -1,11 +1,11 @@
 body {
-    background-image: url("bg.png");
+    background-image: url("media/bg.png");
     font-family: sans-serif;
     margin: auto;
     max-width: 800px;  
 }
 header {
-    background-image: url("ich.jpg");
+    background-image: url("media/ich.jpg");
     background-size: 100% 100%;
     border: 0px solid black;
     border-radius: 0 0 25% 25%;
