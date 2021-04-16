@@ -4,6 +4,7 @@ body {
     padding: 0;
     margin: auto;
     max-width: 800px; 
+    z-index: 1;
 }
 
 header {
@@ -11,6 +12,7 @@ header {
     position: sticky;
     top: 0;
     overflow: hidden;
+    z-index: 2;
 }
 
 main {
