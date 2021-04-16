@@ -207,9 +207,16 @@ input[type=checkbox] {
         font-size: 6vw;
     }
     .container {
-        max-width: 600px;
-    }
+        display: unset;
+      }
+ #pb {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+ }
     #ulsb {
+        text-align: center;
         font-size: 12px;
         letter-spacing: 2px;
         line-height: 40px;
@@ -222,7 +229,7 @@ input[type=checkbox] {
         font-size: 10px;
     }
     form {
-        width: 98%;
+        width: 96%;
     }
     .eingabe {
         font-size: 3vw;
