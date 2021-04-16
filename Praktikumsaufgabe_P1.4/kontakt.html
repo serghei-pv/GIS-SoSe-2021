@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt</title>
+</head>
+
+<body class="kontakt">
+
+    <header>
+
+        <input type="checkbox" class="menu" id="menu">
+
+        <label for="menu" class="burger">
+            <div class="linie oben"></div>
+            <div class="linie mitte"></div>
+            <div class="linie unten"></div>
+        </label>
+
+        <div id="sidebarMenu">
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="index">PORTFOLIO</a></li>
+                    <li><a href="steckbrief.html" class="steckbrief">ABOUT</a></li>
+                    <li><a href="kontakt.html" class="kontakt">CONTACT</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <h1>PORTFOLIO</h1>
+
+        <div class="icons">
+            <a href="https://github.com/serghei-pv/GIS-SoSe-2021" title="GitHub"> <img src="media/git.png" class="icon"
+                    alt="github link"></a>
+
+            <a href="https://www.hs-furtwangen.de/" title="Hochschule Furtwangen"> <img src="media/hfu.png" class="icon"
+                    alt="hfu link"></a>
+
+            <a href="https://www.w3schools.com/" title="W3Schools"> <img src="media/w3.png" class="icon"
+                    alt="w3schools link"></a>
+        </div>
+
+        <h2>KONTAKT</h2>
+
+        <form>
+            <p><input type="text" placeholder="Vorname" class="eingabe"></p>
+            <p><input type="text" placeholder="Nachname" class="eingabe"></p>
+            <p><input type="email" placeholder="E-Mail" class="eingabe"></p>
+            <p><textarea placeholder="Nachricht" id="nachricht"></textarea></p>
+            <p id="datenschutz">Mit Absenden der Nachricht bestätige ich den
+                <a href="https://de.wikipedia.org/wiki/Datenschutz" id="dslink">Datenschutz</a>
+            </p>
+            <p><input type="submit" value="absenden" id="senden"></p>
+        </form>
+
+    </main>
+
+</body>
+
+</html>

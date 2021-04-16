@@ -1,0 +1,290 @@
+body {
+    background-image: url("media/bg.png");
+    font-family: sans-serif;
+    padding: 0;
+    margin: auto;
+    max-width: 800px; 
+}
+
+header {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    overflow: hidden;
+}
+
+main {
+    width: 100%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+.icons {
+text-align: center;
+margin: 5%;
+}
+
+.icon {
+    padding-left: 2%;
+    padding-right: 2%;
+    opacity: 0.3;
+}
+
+.icon:hover {
+    opacity: 1;
+}
+
+nav {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+
+nav ul {
+    text-align: center;
+    border: 1px solid black;
+    background-color: black;
+    border-radius: 0px 0px 5px 5px;
+    margin: 0;
+    padding: 2px; 
+    z-index: 1;
+}
+
+nav li {
+    display: inline-block;
+    color: white;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+nav a:hover {
+    color: yellow;
+}
+
+body.index a.index, body.steckbrief a.steckbrief, body.kontakt a.kontakt {
+    color: tomato;
+}
+
+h1 {
+    color: black;
+    text-align: center;
+    font-size: 80px;
+    margin: 0; 
+}
+
+h2 {
+    color: blueviolet;
+    font-weight: normal;
+    font-size: 40px;
+    padding-top: 5%;
+}
+
+.media {
+    width: 100%;
+    padding-bottom: 5%;
+}
+
+.container {
+    padding-top: 5%;
+    display: flex;
+    max-width: 800px;
+    max-height: 250px;
+  }
+
+#pb {
+    object-fit: contain;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+#ulsb {
+    list-style-type: none;
+    font-size: 20px;
+    letter-spacing: 5px;
+    line-height: 40px;
+}
+
+#sbtext {
+    text-align: justify;
+    font-size: 18px;
+    line-height: 20px;
+    padding: 2%;
+}
+
+.sbdiv {
+    padding-top: 5%;
+}
+
+blockquote {
+    text-align: center;
+}
+
+form {
+    width: 200px;
+}
+
+#datenschutz {
+    color: grey; 
+    font-size: 10px;
+}
+
+#dslink{
+    color: grey;
+}
+
+.eingabe {
+    background-color: grey;
+    color: white;
+    border: none;
+    font-weight: bold;
+    padding-left: 10px;
+    font-size: 15px;
+    width: 250px;
+    height: 20px;
+}
+
+#senden {
+    background-color: grey;
+    color: white;
+    border: none;
+}
+
+#nachricht {
+    background-color: grey;
+    color: white;
+    border: none;
+    font-weight: bold;
+    font-family: sans-serif;
+    padding-left: 10px;
+    font-size: 15px;
+    width: 350px;
+    height: 40px;
+}
+
+input[type=checkbox] {
+    display: none;
+}
+
+@media only screen and (max-width: 1024px) {
+    h1{
+        font-size: 6vw;
+    }
+    h2 {
+        font-size: 4vw;
+    }
+    .container {
+        max-width: 1024px;
+    }
+    #ulsb {
+        font-size: 15px;
+        letter-spacing: 4px;
+        line-height: 40px;
+    }
+    .sbdiv {
+        font-size: 12px;
+    }
+    blockquote {
+        font-size: 12px;
+    }
+  }
+
+@media only screen and (max-width: 600px) {
+    .icon {
+        width: 15px;
+        height: 15px;
+    }
+    h1 {
+        font-size: 8vw;
+    }
+    h2 {
+        text-align: center;
+        font-size: 6vw;
+    }
+    .container {
+        max-width: 600px;
+    }
+    #ulsb {
+        font-size: 12px;
+        letter-spacing: 2px;
+        line-height: 40px;
+        margin-left: -5%;
+    }
+    .sbdiv {
+        font-size: 10px;
+    }
+    blockquote {
+        font-size: 10px;
+    }
+    form {
+        width: 98%;
+    }
+    .eingabe {
+        font-size: 3vw;
+        min-width: 100%;
+        width: 0;
+    }
+    #nachricht {
+        font-size: 3vw;
+        min-width: 100%;
+        width: 0;
+    }
+    #senden {
+        font-size: 3vw;
+    }
+    #datenschutz {
+        font-size: 3vw;
+    }
+    nav a {
+        font-size: 3vw;
+    }
+
+
+    #sidebarMenu {
+        transform: translateY(60px);
+        transition: transform 0.3s ease-in-out;
+    }
+    
+    input[type="checkbox"]:checked ~ #sidebarMenu {
+        transform: translateX(0);
+    }
+    
+    input[type=checkbox] {
+        transition: all 0.3s;
+        display: none;
+    }
+    
+    .burger {
+        transition: all 0.3s;
+        cursor: pointer;
+        float: left;
+        padding: 4px;
+        height: 22px;
+        width: 22px;
+    }
+    
+    .linie {
+        position: absolute;
+        height: 3px;
+        width: 100%;
+        background-color: red;
+        z-index: 2;
+    }
+    
+    .mitte {
+        position: relative;
+        margin-top: 3px;
+    }
+    
+    .oben {
+        position: relative;
+    }
+    
+    .unten {
+        position: relative;
+        margin-top: 3px;
+    }
+  }
