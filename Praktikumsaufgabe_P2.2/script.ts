@@ -1,11 +1,17 @@
 //1a
 console.log("Aufgabe 1a:");
-function min(...array: number[]): void {
-    let minimum: number = Math.min(...array);
+function min(..._arrayMin: number[]): number {
+    let minimum: number = Math.max(..._arrayMin);
+    for (let i: number = 0; i < _arrayMin.length; i++) {
+        if (_arrayMin[i] < minimum) {
+            minimum = _arrayMin[i];
+        }
+    }
     console.log("Die kleinste Zahl ist: " + minimum);
+    return minimum;
 }
 
-min(6, 1, 45, 515, 2, 651, 4887, 891, 7, -2);
+min(6, 1, 45, 515, 2, 651, 4887, -91, 7, -2);
 
 //1b
 console.log("Aufgabe 1b:");
@@ -38,64 +44,21 @@ isEven(75);
 
 //1c
 console.log("Aufgabe 1c:");
-/*
-function c1(): void {
-
-    interface Studi {
-        name: String;
-        surname: String;
-        matrNumber: Number;
-    }
-
-    let s1: Studi = { name: "Thomas", surname: "Gleich", matrNumber: 222323 };
-    let s2: Studi = { name: "Vlad", surname: "Imir", matrNumber: 612314 };
-    let s3: Studi = { name: "Jeremy", surname: "Kern", matrNumber: 147852 };
-
-    let studis: Studi[] = [s1, s2, s3];
-
-    studis.push({ name: "Leo", surname: "Lo", matrNumber: 965521 });
-
-    console.log("Der Name des dritten Studenten lautet: " + studis[2].name);
-    console.log("Der Nachname des vierten Studenten lautet: " + studis[3].surname);
-    console.log("Die Matrikelnummer des zweiten Studenten lautet: " + studis[1].matrNumber);
-    console.log("Der erste Student heißt: " + studis[0].name);
-/*
-    function showInfo(student: String): void {
-        for (let i: number = 0; i < studis.length; i++) {
-            if (studis[i].name == student) {
-                console.log("Die Folgenden Daten sind für den Studenten verfügbar: ");
-                console.log(studis[i]);
-            }
-        }
-    }
-    showInfo("Thomas");
-    showInfo("Vlad");
-    showInfo("Jeremy");
-    showInfo("Leo");
-
-}
-
-c1();
-*/
 
 class Student {
     name: String;
     surname: String;
     matrNumber: Number;
 
-    constructor(name: string, surname: string, matrNumber: number) {
-        this.name = name;
-        this.surname = surname;
-        this.matrNumber = matrNumber;
+    constructor(_name: string, _surname: string, _matrNumber: number) {
+        this.name = _name;
+        this.surname = _surname;
+        this.matrNumber = _matrNumber;
     }
 
-    showInfo?(student: String, arrayS: Student[]): void {
-        for (let i: number = 0; i < arrayS.length; i++) {
-            if (arrayS[i].name == student) {
-                console.log("Die Folgenden Daten sind für den Studenten verfügbar: ");
-                console.log("Name: " + arrayS[i].name + ", Nachname: " + arrayS[i].surname + ", Matrikelnummer: " + arrayS[i].matrNumber);
-            }
-        }
+    showInfo(): void {
+        console.log("Folgendes ist über den Studenten bekannt:");
+        console.log("Name: " + this.name + ", Nachname: " + this.surname + ", Matrikelnummer: " + this.matrNumber);
     }
 }
 
@@ -105,26 +68,38 @@ let s3: Student = new Student("Jeremy", "Kern", 147852);
 
 let studis: Student[] = [s1, s2, s3];
 
-studis.push({ name: "Leo", surname: "Lo", matrNumber: 965521 });
-
-s1.showInfo("Leo", studis);
+s2.showInfo();
 
 
 //2a
-function backwards(array: number[]): number[] {
-    let revered: number[] = array.slice().reverse();
-    return revered;
+function backwards(_array: number[]): number[] {
+    let reversed: number[] = new Array;
+    for (let i: number = _array.length - 1; i > -1; i--) {
+        reversed.push(_array[i]);
+    }
+    return reversed;
 }
 
 //2b
-function join(array1: number[], array2: number[]): number[] {
-    let joint: number[] = array1.concat(array2);
+function join(_array1: number[], _array2: number[]): number[] {
+    //let joint: number[] = _array1.concat(_array2);
+    let joint: number[] = new Array;
+    for (let i: number = 0; i < _array1.length; i++) {
+        joint.push(_array1[i]);
+    }
+    for (let i: number = 0; i < _array2.length; i++) {
+        joint.push(_array2[i]);
+    }
+
     return joint;
 }
 
 //2c
-function split(array: number[], von: number, bis: number): number[] {
-    let splitted: number[] = array.splice(von, bis);
+function split(_array: number[], von: number, bis: number): number[] {
+    let splitted: number[] = new Array;
+    for (let i: number = von; i <= bis; i++) {
+        splitted.push(_array[i]);
+    }
     return splitted;
 }
 
@@ -202,45 +177,44 @@ context.closePath();
 context.fillStyle = "red";
 context.fill();
 
+
+let canvas2: HTMLCanvasElement = <HTMLCanvasElement>document.getElementById("myCanvas2");
+let context2: CanvasRenderingContext2D = canvas2.getContext("2d");
+
 //3b
-interface Rect {
+class Rect {
+
     xCord: number;
     yCord: number;
     width: number;
     length: number;
+
+    //3c
+    constructor() {
+        this.xCord = Math.floor(Math.random() * 500);
+        this.yCord = Math.floor(Math.random() * 500);
+        this.width = Math.floor(Math.random() * 100);
+        this.length = Math.floor(Math.random() * 100);
+    }
+
+    //3d
+    drawRect(): void {
+        context2.fillStyle = "yellow";
+        context2.beginPath();
+        context2.fillRect(this.xCord, this.yCord, this.width, this.length);
+        context2.closePath();
+    }
+
 }
-
-//3c
-function createRect(): void {
-    context.beginPath();
-    context.fillRect(Math.random() * 500, Math.random() * 500, Math.random() * 100, Math.random() * 100);
-    context.closePath();
-}
-
-//createRect();
-
-//3d
-context.fillStyle = "yellow";
-
-function drawRect(xCord: number, yCord: number, width: number, length: number): void {
-    context.beginPath();
-    context.fillRect(xCord, yCord, width, length);
-    context.closePath();
-}
-
-drawRect(420, 0, 80, 80);
 
 //3e
-let allRect: Rect[] = [];
-context.fillStyle = "grey";
+let allRect: Rect[] = new Array;
+let r1: Rect = new Rect;
+let r2: Rect = new Rect;
+let r3: Rect = new Rect;
+
+allRect.push(r1, r2, r3);
 
 for (let i: number = 0; i < 3; i++) {
-    let xRandom: number = (Math.random() + 150) * i;
-    let yRandom: number = (Math.random() + 150) * i;
-    let widthRandom: number = Math.random() * 200;
-    let lengthRandom: number = Math.random() * 200;
-    let myRect: Rect = { xCord: xRandom, yCord: yRandom, width: widthRandom, length: lengthRandom };
-    allRect.push(myRect);
-    drawRect(allRect[i].xCord, allRect[i].yCord, allRect[i].width, allRect[i].length);
-
+    allRect[i].drawRect();
 }
