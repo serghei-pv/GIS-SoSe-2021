@@ -15,18 +15,18 @@ min(6, 1, 45, 515, 2, 651, 4887, -91, 7, -2);
 
 //1b
 console.log("Aufgabe 1b:");
-function isEven(n: number): boolean {
+function isEven(_n: number): boolean {
 
-    if (n == 0) {
+    if (_n == 0) {
         console.log("Die Zahl ist gerade");
         return true;
     }
-    else if (n == 1) {
+    else if (_n == 1) {
         console.log("Die Zahl ist ungerade");
         return false;
     }
     else {
-        return isEven(n - 2);
+        return isEven(_n - 2);
     }
 }
 
@@ -95,9 +95,9 @@ function join(_array1: number[], _array2: number[]): number[] {
 }
 
 //2c
-function split(_array: number[], von: number, bis: number): number[] {
+function split(_array: number[], _von: number, _bis: number): number[] {
     let splitted: number[] = new Array;
-    for (let i: number = von; i <= bis; i++) {
+    for (let i: number = _von; i <= _bis; i++) {
         splitted.push(_array[i]);
     }
     return splitted;
@@ -215,6 +215,6 @@ let r3: Rect = new Rect;
 
 allRect.push(r1, r2, r3);
 
-for (let i: number = 0; i < 3; i++) {
+for (let i: number = 0; i < allRect.length; i++) {
     allRect[i].drawRect();
 }

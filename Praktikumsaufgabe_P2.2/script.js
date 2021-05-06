@@ -14,17 +14,17 @@ function min(..._arrayMin) {
 min(6, 1, 45, 515, 2, 651, 4887, -91, 7, -2);
 //1b
 console.log("Aufgabe 1b:");
-function isEven(n) {
-    if (n == 0) {
+function isEven(_n) {
+    if (_n == 0) {
         console.log("Die Zahl ist gerade");
         return true;
     }
-    else if (n == 1) {
+    else if (_n == 1) {
         console.log("Die Zahl ist ungerade");
         return false;
     }
     else {
-        return isEven(n - 2);
+        return isEven(_n - 2);
     }
 }
 isEven(50);
@@ -75,9 +75,9 @@ function join(_array1, _array2) {
     return joint;
 }
 //2c
-function split(_array, von, bis) {
+function split(_array, _von, _bis) {
     let splitted = new Array;
-    for (let i = von; i <= bis; i++) {
+    for (let i = _von; i <= _bis; i++) {
         splitted.push(_array[i]);
     }
     return splitted;
@@ -166,7 +166,7 @@ let r1 = new Rect;
 let r2 = new Rect;
 let r3 = new Rect;
 allRect.push(r1, r2, r3);
-for (let i = 0; i < 3; i++) {
+for (let i = 0; i < allRect.length; i++) {
     allRect[i].drawRect();
 }
 //# sourceMappingURL=script.js.map
