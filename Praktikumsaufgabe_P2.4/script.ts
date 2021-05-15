@@ -19,7 +19,7 @@ namespace P2_4 {
         let target: HTMLElement = <HTMLElement>_e.currentTarget;
         let index: number = Number(target.dataset.index);
 
-        if (window.location.href == "https://serghei-pv.github.io/GIS-SoSe-2021/Praktikumsaufgabe_P2.4/index.html") {
+        if (window.location.href == "https://serghei-pv.github.io/GIS-SoSe-2021/Praktikumsaufgabe_P2.4/") {
             localStorage.setItem("auswahl1", JSON.stringify(myPieces.flowers[index]));
             window.location.assign("two.html");
 
@@ -61,7 +61,7 @@ namespace P2_4 {
         }
     }
 
-    if (window.location.href == "https://serghei-pv.github.io/GIS-SoSe-2021/Praktikumsaufgabe_P2.4/index.html") {
+    if (window.location.href == "https://serghei-pv.github.io/GIS-SoSe-2021/Praktikumsaufgabe_P2.4/") {
         windows(myPieces.flowers);
 
     } else if (window.location.href == "https://serghei-pv.github.io/GIS-SoSe-2021/Praktikumsaufgabe_P2.4/two.html") {
