@@ -1,10 +1,10 @@
 namespace P2_3 {
 
     //Blume
-    export let flowers: Flower[] = new Array;
+    export let flowers: FlowerOrPot[] = new Array;
 
     //Sonnenblume
-    let flower1: Flower = { context: canvasf1.getContext("2d"), name: "Sonnenblume", color: "yellow" };
+    let flower1: FlowerOrPot = { context: canvasf1.getContext("2d"), name: "Sonnenblume", color: "yellow" };
 
     flower1.context.beginPath();
     flower1.context.moveTo(250, 250);
@@ -32,7 +32,7 @@ namespace P2_3 {
     flowers.push(flower1);
 
     //Rose
-    let flower2: Flower = { context: canvasf2.getContext("2d"), name: "Rose", color: "red" };
+    let flower2: FlowerOrPot = { context: canvasf2.getContext("2d"), name: "Rose", color: "red" };
 
     flower2.context.beginPath();
     flower2.context.moveTo(300, 350);
@@ -53,7 +53,7 @@ namespace P2_3 {
     flowers.push(flower2);
 
     //Knospe
-    let flower3: Flower = { context: canvasf3.getContext("2d"), name: "Knospe", color: "green" };
+    let flower3: FlowerOrPot = { context: canvasf3.getContext("2d"), name: "Knospe", color: "green" };
 
     flower3.context.beginPath();
     flower3.context.moveTo(300, 350);
@@ -122,11 +122,11 @@ namespace P2_3 {
     stems.push(stem3);
 
     //Topf
-    export let pots: Pot[] = new Array;
+    export let pots: FlowerOrPot[] = new Array;
 
     //Keramik
 
-    let pot1: Pot = { context: canvasp1.getContext("2d"), name: "Keramik", color: "brown" };
+    let pot1: FlowerOrPot = { context: canvasp1.getContext("2d"), name: "Keramik", color: "brown" };
 
     pot1.context.beginPath();
     pot1.context.moveTo(350, 850);
@@ -140,7 +140,7 @@ namespace P2_3 {
     pots.push(pot1);
 
     //Eimer
-    let pot2: Pot = { context: canvasp2.getContext("2d"), name: "Eimer", color: "silver" };
+    let pot2: FlowerOrPot = { context: canvasp2.getContext("2d"), name: "Eimer", color: "silver" };
 
     pot2.context.beginPath();
     pot2.context.moveTo(500, 400);
@@ -156,7 +156,7 @@ namespace P2_3 {
 
 
     //Vase
-    let pot3: Pot = { context: canvasp3.getContext("2d"), name: "Vase", color: "blue" };
+    let pot3: FlowerOrPot = { context: canvasp3.getContext("2d"), name: "Vase", color: "blue" };
 
     pot3.context.beginPath();
     pot3.context.arc(250, 700, 200, 0, 2 * Math.PI, false);

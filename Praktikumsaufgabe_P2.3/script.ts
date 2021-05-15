@@ -169,23 +169,23 @@ namespace P2_3 {
         }
     }
 
-    let flowerPicked: Flower;
+    let flowerPicked: FlowerOrPot;
     let stemPicked: Stem;
-    let potPicked: Pot;
+    let potPicked: FlowerOrPot;
 
-    function auswahl1_1(): Flower {
+    function auswahl1_1(): FlowerOrPot {
         flowerPicked = flowers[0];
         console.log(flowerPicked);
         return flowerPicked;
     }
 
-    function auswahl1_2(): Flower {
+    function auswahl1_2(): FlowerOrPot {
         flowerPicked = flowers[1];
         console.log(flowerPicked);
         return flowerPicked;
     }
 
-    function auswahl1_3(): Flower {
+    function auswahl1_3(): FlowerOrPot {
         flowerPicked = flowers[2];
         console.log(flowerPicked);
         return flowerPicked;
@@ -209,19 +209,19 @@ namespace P2_3 {
         return stemPicked;
     }
 
-    function auswahl3_1(): Pot {
+    function auswahl3_1(): FlowerOrPot {
         potPicked = pots[0];
         console.log(potPicked);
         return potPicked;
     }
 
-    function auswahl3_2(): Pot {
+    function auswahl3_2(): FlowerOrPot {
         potPicked = pots[1];
         console.log(potPicked);
         return potPicked;
     }
 
-    function auswahl3_3(): Pot {
+    function auswahl3_3(): FlowerOrPot {
         potPicked = pots[2];
         console.log(potPicked);
         return potPicked;
@@ -247,7 +247,7 @@ namespace P2_3 {
 
 
 
-    export interface Flower {
+    export interface FlowerOrPot {
         context: CanvasRenderingContext2D;
         name: string;
         color: string;
@@ -261,16 +261,10 @@ namespace P2_3 {
         height: number;
     }
 
-    export interface Pot {
-        context: CanvasRenderingContext2D;
-        name: string;
-        color: string;
-    }
-
     interface Flowerpot {
-        headPiece: Flower;
+        headPiece: FlowerOrPot;
         middlePiece: Stem;
-        bottomPiece: Pot;
+        bottomPiece: FlowerOrPot;
     }
 }
 /*
