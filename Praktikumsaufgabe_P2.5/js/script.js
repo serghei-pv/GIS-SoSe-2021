@@ -19,7 +19,7 @@ var P2_5;
         function next(_e) {
             let target = _e.currentTarget;
             let index = Number(target.dataset.index);
-            if (window.location.href == "https://serghei-pv.github.io/GIS-SoSe-2021/Praktikumsaufgabe_P2.5/index.html") {
+            if (window.location.href == "https://serghei-pv.github.io/GIS-SoSe-2021/Praktikumsaufgabe_P2.5/pages/index.html") {
                 localStorage.setItem("auswahl1", JSON.stringify(myPieces.flowers[index]));
                 window.location.assign("two.html");
             }
@@ -57,7 +57,7 @@ var P2_5;
                 console.log("Vorschau wird im Ergebnisfenster nicht angezeigt.");
             }
         }
-        if (window.location.href == "https://serghei-pv.github.io/GIS-SoSe-2021/Praktikumsaufgabe_P2.5/index.html") {
+        if (window.location.href == "https://serghei-pv.github.io/GIS-SoSe-2021/Praktikumsaufgabe_P2.5/pages/index.html") {
             windows(myPieces.flowers);
         }
         else if (window.location.href == "https://serghei-pv.github.io/GIS-SoSe-2021/Praktikumsaufgabe_P2.5/pages/two.html") {
