@@ -57,7 +57,7 @@ var P2_5;
                 console.log("Vorschau wird im Ergebnisfenster nicht angezeigt.");
             }
         }
-        if (window.location.href == "https://serghei-pv.github.io/GIS-SoSe-2021/Praktikumsaufgabe_P2.5/pages/index.html") {
+        if (window.location.href == "https://serghei-pv.github.io/GIS-SoSe-2021/Praktikumsaufgabe_P2.5/index.html") {
             windows(myPieces.flowers);
         }
         else if (window.location.href == "https://serghei-pv.github.io/GIS-SoSe-2021/Praktikumsaufgabe_P2.5/pages/two.html") {
