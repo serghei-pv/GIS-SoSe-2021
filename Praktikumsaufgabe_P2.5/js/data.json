@@ -1,0 +1,17 @@
+        {
+        "flowers": [
+            { "name": "Sonne", "image": "../media/oben/gelb.png" },
+            { "name": "Flamme", "image": "../media/oben/rot.png" },
+            { "name": "Zukunft", "image": "../media/oben/grün.png" }],
+
+        "stems": [
+            { "name": "gerade", "image": "../media/mitte/gerade.png" },
+            { "name": "Blatt", "image": "../media/mitte/blatt.png" },
+            { "name": "Stachel", "image": "../media/mitte/stachel.png" }],
+
+        "pots": [
+            { "name": "Keramik", "image": "../media/unten/keramik.png" },
+            { "name": "Eimer", "image": "../media/unten/eimer.png" },
+            { "name": "Vase", "image": "../media/unten/vase.png" }
+        ]
+    }

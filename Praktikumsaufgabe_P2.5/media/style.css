@@ -1,0 +1,104 @@
+html {
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("bg.jpg");
+    font-family: sans-serif;
+}
+
+body {
+    margin-right: auto;
+    margin-left: auto;
+    font-family: sans-serif;
+    color: white;
+    max-width: 800px;
+    max-height: 767px;
+    background-image: linear-gradient(rgb(51, 236, 122), rgb(7, 117, 53));
+    border-radius: 50px 50px 50px 50px;
+}
+
+header main {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+main {
+    padding-top: 10px;
+    padding-bottom: 30px;
+}
+
+body, footer {
+    box-shadow: 0 0 10px black;
+}
+
+footer {
+    min-width: 260px;
+    height: 60px;
+    padding: 20px;
+    position: fixed;
+    text-align: center;
+    bottom: 0px;
+    margin-bottom: 0px;
+    background-image: linear-gradient(rgb(24, 185, 145), rgb(17, 146, 114));
+    border-radius: 50px 50px 0px 0px;
+}
+
+main img {
+    max-width: 200px;
+    max-height: 200px;
+}
+
+.choice main img {
+    border: 5px solid black;
+}
+
+.choice main img:hover {
+    opacity: 0.8;
+}
+
+#art img {
+    margin: auto;
+}
+
+#art .target {
+    display: block;
+}
+
+footer img {
+    max-width: 50px;
+    max-height: 50px;
+    border: 2px solid black;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+div {
+    display: flex;
+    margin: auto;
+}
+
+h1 {
+    font-size: 50px;
+    text-align: center;
+    padding-top: 30px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+h1, p {
+    text-shadow: 0 0 30px black;
+}
+
+p {
+    text-align: center;
+    margin-top: 7%;
+    font-size: 50px;
+}
+
+#info {
+    margin-top: 20px;
+    margin-left: 50%;
+    font-size: 20px;
+    color: red;
+    text-shadow: 0 0 15px black;
+}

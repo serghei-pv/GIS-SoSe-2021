@@ -1,3 +1,3 @@
 # GIS-SoSe-2021
 
-Hallo liebe Dozis
+Abgeben für das Modul GIS im SoSe 2021
