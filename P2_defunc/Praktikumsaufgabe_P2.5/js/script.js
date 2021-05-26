@@ -66,7 +66,7 @@ var P2_5;
         else if (window.location.href == "https://serghei-pv.github.io/GIS-SoSe-2021/Praktikumsaufgabe_P2.5/pages/three.html") {
             windows(myPieces.pots);
         }
-        else if (window.location.href == "https://serghei-pv.github.io/GIS-SoSe-2021/Praktikumsaufgabe_P2.5/pages/art.html") {
+        else if (window.location.href == "P2_defunc\Praktikumsaufgabe_P2.5\pages\art.html") {
             windows(storageLocal);
             let info = document.getElementById("info");
             let url = "https://gis-communication.herokuapp.com";
