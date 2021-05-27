@@ -1,5 +1,23 @@
 {
   "dependencies": {
     "@types/node": "^15.6.1"
-  }
+  },
+  "name": "gis-sose-2021",
+  "description": "Abgeben für das Modul GIS im SoSe 2021",
+  "version": "0.0.1",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "start": "node P3/Praktikumsaufgabe_P3.1/js/script.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/serghei-pv/GIS-SoSe-2021.git"
+  },
+  "author": "Serghei Pavlov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/serghei-pv/GIS-SoSe-2021/issues"
+  },
+  "homepage": "https://github.com/serghei-pv/GIS-SoSe-2021#readme"
 }
