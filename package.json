@@ -8,7 +8,7 @@
   "main": "index.js",
   "devDependencies": {},
   "scripts": {
-    "start": "node P3/Praktikumsaufgabe_P3.1/js/script.js"
+    "start": "node P3/Praktikumsaufgabe_P3.1/js/server.js"
   },
   "repository": {
     "type": "git",

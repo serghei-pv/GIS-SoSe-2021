@@ -1,26 +1,17 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.P_3_1Server = void 0;
-const Http = require("http");
-var P_3_1Server;
-(function (P_3_1Server) {
-    console.log("Starting server");
-    let port = Number(process.env.PORT);
-    if (!port)
-        port = 8100;
-    let server = Http.createServer();
-    server.addListener("request", handleRequest);
-    server.addListener("listening", handleListen);
-    server.listen(port);
-    function handleListen() {
-        console.log("Listening");
+var P3_1;
+(function (P3_1) {
+    document.getElementById("button").addEventListener("click", click);
+    function click() {
+        fetchRequest("https://pav-lov.herokuapp.com/");
     }
-    function handleRequest(_request, _response) {
-        console.log("I hear voices!");
-        _response.setHeader("content-type", "text/html; charset=utf-8");
-        _response.setHeader("Access-Control-Allow-Origin", "*");
-        _response.write(_request.url);
-        _response.end();
+    async function fetchRequest(_url) {
+        let formData = new FormData(document.forms[0]);
+        let query = new URLSearchParams(formData);
+        _url = _url + "?" + query.toString();
+        let response = await fetch(_url);
+        let data = await response.text();
+        console.log(data);
     }
-})(P_3_1Server = exports.P_3_1Server || (exports.P_3_1Server = {}));
+})(P3_1 || (P3_1 = {}));
 //# sourceMappingURL=script.js.map
