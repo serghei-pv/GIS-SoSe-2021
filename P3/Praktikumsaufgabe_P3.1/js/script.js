@@ -11,7 +11,7 @@ var P3_1;
         _url = _url + "?" + query.toString();
         let response = await fetch(_url);
         let data = await response.text();
-        console.log(data);
+        console.log("Die Antwort des Servers: " + data);
     }
 })(P3_1 || (P3_1 = {}));
 //# sourceMappingURL=script.js.map

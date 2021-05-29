@@ -15,6 +15,6 @@ namespace P3_1 {
         _url = _url + "?" + query.toString();
         let response: Response = await fetch(_url);
         let data: string = await response.text();
-        console.log(data);
+        console.log("Die Antwort des Servers: " + data);
     }
 }
