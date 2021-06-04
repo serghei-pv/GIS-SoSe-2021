@@ -22,9 +22,9 @@ var P3_2;
         _response.setHeader("Access-Control-Allow-Origin", "*");
         if (_request.url) {
             let url = Url.parse(_request.url, true);
-            let jsonResponse = JSON.stringify(url.query);
+            //let jsonResponse: string = JSON.stringify(url.query);
             //_response.write(jsonResponse);
-            _response.write("<ul><li>Your username is: " + url.query.login + "</li><li>" + "Your password is: " + url.query.password + "</li><ul>");
+            _response.write("<div>Your username is: " + url.query.login + "</div><div>" + "Your password is: " + url.query.password + "</div>");
         }
         _response.end();
     }

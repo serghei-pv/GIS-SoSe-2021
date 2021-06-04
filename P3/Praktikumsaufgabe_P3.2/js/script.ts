@@ -18,4 +18,5 @@ namespace P3_2 {
         let response: Response = await fetch(_url);
         let data: string = await response.text();
         target.innerHTML = data;
+    }
 }

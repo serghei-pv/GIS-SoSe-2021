@@ -25,10 +25,10 @@ export namespace P3_2 {
     if (_request.url) {
       let url: Url.UrlWithParsedQuery = Url.parse(_request.url, true);
 
-      let jsonResponse: string = JSON.stringify(url.query);
+      //let jsonResponse: string = JSON.stringify(url.query);
       //_response.write(jsonResponse);
 
-      _response.write("<ul><li>Your username is: " + url.query.login + "</li><li>" + "Your password is: " + url.query.password + "</li><ul>");
+      _response.write("<div>Your username is: " + url.query.login + "</div><div>" + "Your password is: " + url.query.password + "</div>");
     }
 
     _response.end();
