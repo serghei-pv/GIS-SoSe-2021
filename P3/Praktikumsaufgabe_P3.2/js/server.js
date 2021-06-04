@@ -25,6 +25,8 @@ var A08Server;
             for (let key in url.query) {
                 _response.write(key + ":" + url.query[key]);
             }
+            let jsonString = JSON.stringify(url.query);
+            _response.write(jsonString);
         }
         //_response.write(_request.url);
         _response.end();
