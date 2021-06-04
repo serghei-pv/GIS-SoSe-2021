@@ -1,5 +1,5 @@
 
-namespace P3_1 {
+namespace P3_2 {
 
     let button: HTMLButtonElement = <HTMLButtonElement>document.getElementById("button");
     button.addEventListener("click", click);

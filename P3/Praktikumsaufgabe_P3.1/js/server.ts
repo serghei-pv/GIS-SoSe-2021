@@ -23,7 +23,7 @@ export namespace P3_1 {                             //export ist nur da, damit T
         console.log("I hear voices!");                                      //Falls die Funktion ausgeführt wird, wird in der Konsole "I hear voices!" ausgegeben.
         _response.setHeader("content-type", "text/html; charset=utf-8");    //Der Header der Serverantwort wird bearbeitet. Hier wie die Serverantwort aussieht.
         _response.setHeader("Access-Control-Allow-Origin", "*");            //Der Header der Serverantwort wird bearbeitet. Hier wer auf den Server zugreifen darf (alle)
-        _response.write(_request.url);                                      //Die Antwort Servers wird "geschrieben".
+        _response.write(_request.url);                                      //Die Antwort des Servers wird "geschrieben".
         console.log(_request.url);
         _response.end();                                                    //Die Antwort des Servers wird beendet.
     }

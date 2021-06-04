@@ -1,6 +1,6 @@
 "use strict";
-var P3_1;
-(function (P3_1) {
+var P3_2;
+(function (P3_2) {
     let button = document.getElementById("button");
     button.addEventListener("click", click);
     function click() {
@@ -14,5 +14,5 @@ var P3_1;
         let data = await response.text();
         console.log("Die Antwort des Servers: " + data);
     }
-})(P3_1 || (P3_1 = {}));
+})(P3_2 || (P3_2 = {}));
 //# sourceMappingURL=script.js.map
