@@ -1,8 +1,9 @@
 
 namespace P3_2 {
 
-    let button: HTMLButtonElement = <HTMLButtonElement>document.getElementById("button");
+    let button: HTMLButtonElement = <HTMLButtonElement>document.getElementById("htmlButton");
     button.addEventListener("click", click);
+    let target: HTMLDivElement = <HTMLDivElement>document.getElementById("target");
 
     function click(): void {
         fetchRequest("https://pav-lov.herokuapp.com/");
@@ -16,6 +17,8 @@ namespace P3_2 {
         _url = _url + "?" + query.toString();
         let response: Response = await fetch(_url);
         let data: string = await response.text();
-        console.log("Die Antwort des Servers: " + data);
+        let p: HTMLParagraphElement = document.createElement("p");
+        p.innerHTML = "Die Antwort des Servers: " + data;
+        target.appendChild(p);
     }
 }

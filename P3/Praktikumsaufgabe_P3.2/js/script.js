@@ -1,8 +1,9 @@
 "use strict";
 var P3_2;
 (function (P3_2) {
-    let button = document.getElementById("button");
+    let button = document.getElementById("htmlButton");
     button.addEventListener("click", click);
+    let target = document.getElementById("target");
     function click() {
         fetchRequest("https://pav-lov.herokuapp.com/");
     }
@@ -12,7 +13,9 @@ var P3_2;
         _url = _url + "?" + query.toString();
         let response = await fetch(_url);
         let data = await response.text();
-        console.log("Die Antwort des Servers: " + data);
+        let p = document.createElement("p");
+        p.innerHTML = "Die Antwort des Servers: " + data;
+        target.appendChild(p);
     }
 })(P3_2 || (P3_2 = {}));
 //# sourceMappingURL=script.js.map
