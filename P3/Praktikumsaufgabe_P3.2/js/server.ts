@@ -1,7 +1,7 @@
 import * as Http from "http";
 import * as Url from "url";
 
-export namespace A08Server {
+export namespace P3_2 {
   console.log("Starting server");
   let port: number = Number(process.env.PORT);
   if (!port)
@@ -25,7 +25,7 @@ export namespace A08Server {
     if (_request.url) {
       let url: Url.UrlWithParsedQuery = Url.parse(_request.url, true);
       for (let key in url.query) {
-        _response.write(key + ":" + url.query[key]);
+        _response.write(key + ":" + url.query[key] + " ");
       }
 
       let jsonString: string = JSON.stringify(url.query);
