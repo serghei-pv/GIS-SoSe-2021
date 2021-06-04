@@ -22,13 +22,9 @@ var P3_2;
         _response.setHeader("Access-Control-Allow-Origin", "*");
         if (_request.url) {
             let url = Url.parse(_request.url, true);
-            for (let key in url.query) {
-                _response.write(key + ":" + url.query[key] + " ");
-            }
-            //let jsonString: string = JSON.stringify(url.query);
-            //_response.write(jsonString);
+            let jsonResponse = JSON.stringify(url.query);
+            _response.write(jsonResponse);
         }
-        //_response.write(_request.url);
         _response.end();
     }
 })(P3_2 = exports.P3_2 || (exports.P3_2 = {}));

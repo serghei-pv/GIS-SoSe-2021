@@ -24,16 +24,11 @@ export namespace P3_2 {
     
     if (_request.url) {
       let url: Url.UrlWithParsedQuery = Url.parse(_request.url, true);
-      for (let key in url.query) {
-        _response.write(key + ":" + url.query[key] + " ");
-      }
 
-      //let jsonString: string = JSON.stringify(url.query);
-      //_response.write(jsonString);
+      let jsonResponse: string = JSON.stringify(url.query);
+      _response.write(jsonResponse);
 
     }
-
-    //_response.write(_request.url);
 
     _response.end();
   }
