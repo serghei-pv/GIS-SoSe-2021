@@ -17,8 +17,5 @@ namespace P3_2 {
         _url = _url + "?" + query.toString();
         let response: Response = await fetch(_url);
         let data: string = await response.text();
-        let p: HTMLParagraphElement = document.createElement("p");
-        p.innerHTML = "Die Antwort des Servers: " + data;
-        target.appendChild(p);
-    }
+        target.innerHTML = data;
 }

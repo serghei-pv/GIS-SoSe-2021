@@ -13,9 +13,7 @@ var P3_2;
         _url = _url + "?" + query.toString();
         let response = await fetch(_url);
         let data = await response.text();
-        let p = document.createElement("p");
-        p.innerHTML = "Die Antwort des Servers: " + data;
-        target.appendChild(p);
+        target.innerHTML = data;
     }
 })(P3_2 || (P3_2 = {}));
 //# sourceMappingURL=script.js.map
