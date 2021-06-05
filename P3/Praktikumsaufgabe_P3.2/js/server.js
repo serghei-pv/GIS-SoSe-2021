@@ -22,7 +22,6 @@ var P3_2;
         _response.setHeader("Access-Control-Allow-Origin", "*");
         if (_request.url) {
             let url = Url.parse(_request.url, true);
-            //let htmlResponse: string = "<div>Your username is: " + url.query.login + "</div><div>" + "Your password is: " + url.query.password + "</div>";
             let jsonResponse = JSON.stringify(url.query);
             if (url.pathname == "/html") {
                 for (let key in url.query) {

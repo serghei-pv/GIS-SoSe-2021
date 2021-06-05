@@ -25,7 +25,6 @@ export namespace P3_2 {
     if (_request.url) {
       let url: Url.UrlWithParsedQuery = Url.parse(_request.url, true);
 
-      //let htmlResponse: string = "<div>Your username is: " + url.query.login + "</div><div>" + "Your password is: " + url.query.password + "</div>";
       let jsonResponse: string = JSON.stringify(url.query);
 
       if (url.pathname == "/html") {
