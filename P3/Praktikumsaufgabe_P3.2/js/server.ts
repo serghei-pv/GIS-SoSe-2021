@@ -26,9 +26,9 @@ export namespace P3_2 {
       let url: Url.UrlWithParsedQuery = Url.parse(_request.url, true);
 
       let htmlResponse: string = "<div>Your username is: " + url.query.login + "</div><div>" + "Your password is: " + url.query.password + "</div>";
-
+      let jsonRespone: string = `{[{"login": "url.query.login"}, {"password": "url.query.password"}]}`;
       _response.write(htmlResponse);
-      console.log(url.query[1]);
+      console.log(jsonRespone);
     }
 
 
