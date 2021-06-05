@@ -1,19 +1,29 @@
 "use strict";
 var P3_2;
 (function (P3_2) {
-    let button = document.getElementById("htmlButton");
-    button.addEventListener("click", click);
+    let htmlbutton = document.getElementById("htmlButton");
+    htmlbutton.addEventListener("click", htmlclick);
+    let jsonbutton = document.getElementById("jsonButton");
+    jsonbutton.addEventListener("click", jsonclick);
     let target = document.getElementById("target");
-    function click() {
-        fetchRequest("https://pav-lov.herokuapp.com/");
+    function htmlclick() {
+        fetchRequest("https://pav-lov.herokuapp.com/", "html");
     }
-    async function fetchRequest(_url) {
+    function jsonclick() {
+        fetchRequest("https://pav-lov.herokuapp.com/", "json");
+    }
+    async function fetchRequest(_url, _form) {
         let formData = new FormData(document.forms[0]);
         let query = new URLSearchParams(formData);
         _url = _url + "?" + query.toString();
         let response = await fetch(_url);
         let data = await response.text();
-        target.innerHTML = data;
+        if (_form == "html") {
+            target.innerHTML = data;
+        }
+        if (_form == "json") {
+            console.log(data);
+        }
     }
 })(P3_2 || (P3_2 = {}));
 //# sourceMappingURL=script.js.map

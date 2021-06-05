@@ -1,15 +1,23 @@
 
 namespace P3_2 {
 
-    let button: HTMLButtonElement = <HTMLButtonElement>document.getElementById("htmlButton");
-    button.addEventListener("click", click);
+    let htmlbutton: HTMLButtonElement = <HTMLButtonElement>document.getElementById("htmlButton");
+    htmlbutton.addEventListener("click", htmlclick);
+    let jsonbutton: HTMLButtonElement = <HTMLButtonElement>document.getElementById("jsonButton");
+    jsonbutton.addEventListener("click", jsonclick);
+
     let target: HTMLDivElement = <HTMLDivElement>document.getElementById("target");
 
-    function click(): void {
-        fetchRequest("https://pav-lov.herokuapp.com/");
+    function htmlclick(): void {
+        fetchRequest("https://pav-lov.herokuapp.com/", "html");
     }
 
-    async function fetchRequest(_url: RequestInfo): Promise<void> {
+    function jsonclick(): void {
+        fetchRequest("https://pav-lov.herokuapp.com/", "json");
+    }
+
+
+    async function fetchRequest(_url: RequestInfo, _form: string): Promise<void> {
 
         let formData: FormData = new FormData(document.forms[0]);
 
@@ -17,6 +25,11 @@ namespace P3_2 {
         _url = _url + "?" + query.toString();
         let response: Response = await fetch(_url);
         let data: string = await response.text();
-        target.innerHTML = data;
+        if (_form == "html") {
+            target.innerHTML = data;
+        }
+        if (_form == "json") {
+            console.log(data);
+        }
     }
 }
