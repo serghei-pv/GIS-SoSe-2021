@@ -16,13 +16,13 @@ var P3_2;
         let formData = new FormData(document.forms[0]);
         let query = new URLSearchParams(formData);
         if (_form == "html") {
-            _url = _url + "/html" + "?" + query.toString();
+            _url = _url + "html" + "?" + query.toString();
             let response = await fetch(_url);
             let data = await response.text();
             target.innerHTML = data;
         }
         if (_form == "json") {
-            _url = _url + "/json" + "?" + query.toString();
+            _url = _url + "json" + "?" + query.toString();
             let response = await fetch(_url);
             let data = await response.json();
             console.log(data);

@@ -25,13 +25,13 @@ namespace P3_2 {
         let query: URLSearchParams = new URLSearchParams(<any>formData);
 
         if (_form == "html") {
-            _url = _url + "/html" + "?" + query.toString();
+            _url = _url + "html" + "?" + query.toString();
             let response: Response = await fetch(_url);
             let data: string = await response.text();
             target.innerHTML = data;
         }
         if (_form == "json") {
-            _url = _url + "/json" + "?" + query.toString();
+            _url = _url + "json" + "?" + query.toString();
             let response: Response = await fetch(_url);
             let data: string = await response.json();
             console.log(data);
