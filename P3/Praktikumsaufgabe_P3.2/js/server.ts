@@ -28,18 +28,7 @@ export namespace P3_2 {
       //let jsonResponse: string = JSON.stringify(url.query);
       //_response.write(jsonResponse);
 
-      let response = [
-        {
-          "html": "<div>Your username is: " + url.query.login + "</div><div>" + "Your password is: " + url.query.password + "</div>"
-        },
-        {
-          "json": url.query
-        }
-      ];
-
       _response.write("<div>Your username is: " + url.query.login + "</div><div>" + "Your password is: " + url.query.password + "</div>");
-      
-      _response.write(response);
     }
 
     _response.end();
