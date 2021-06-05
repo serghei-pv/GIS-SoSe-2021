@@ -25,7 +25,8 @@ var P3_2;
             //let jsonResponse: string = JSON.stringify(url.query);
             //_response.write(jsonResponse);
             let htmlResponse = "<div>Your username is: " + url.query.login + "</div><div>" + "Your password is: " + url.query.password + "</div>";
-            _response.write([htmlResponse, url.query]);
+            _response.write(htmlResponse);
+            console.log(url.query);
         }
         _response.end();
     }
