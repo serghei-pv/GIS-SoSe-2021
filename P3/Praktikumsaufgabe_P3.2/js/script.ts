@@ -26,10 +26,10 @@ namespace P3_2 {
         let response: Response = await fetch(_url);
         let data: string = await response.text();
         if (_form == "html") {
-            target.innerHTML = data[0];
+            target.innerHTML = data;
         }
         if (_form == "json") {
-            console.log(data[1]);
+            console.log(data);
         }
     }
 }

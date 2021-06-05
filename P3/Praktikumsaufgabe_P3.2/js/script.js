@@ -19,10 +19,10 @@ var P3_2;
         let response = await fetch(_url);
         let data = await response.text();
         if (_form == "html") {
-            target.innerHTML = data[0];
+            target.innerHTML = data;
         }
         if (_form == "json") {
-            console.log(data[1]);
+            console.log(data);
         }
     }
 })(P3_2 || (P3_2 = {}));
