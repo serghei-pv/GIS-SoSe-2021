@@ -24,7 +24,6 @@ var P3_2;
             let url = Url.parse(_request.url, true);
             let htmlResponse = "<div>Your username is: " + url.query.login + "</div><div>" + "Your password is: " + url.query.password + "</div>";
             _response.write(htmlResponse);
-            _response.write(url);
         }
         _response.end();
     }
