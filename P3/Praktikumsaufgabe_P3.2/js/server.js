@@ -22,10 +22,9 @@ var P3_2;
         _response.setHeader("Access-Control-Allow-Origin", "*");
         if (_request.url) {
             let url = Url.parse(_request.url, true);
-            let jsonResponse = JSON.parse(JSON.stringify(url.query));
             let htmlResponse = "<div>Your username is: " + url.query.login + "</div><div>" + "Your password is: " + url.query.password + "</div>";
             _response.write(htmlResponse);
-            _response.write(jsonResponse);
+            _response.write(url);
         }
         _response.end();
     }
