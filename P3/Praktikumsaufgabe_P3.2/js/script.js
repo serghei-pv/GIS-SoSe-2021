@@ -15,13 +15,16 @@ var P3_2;
     async function fetchRequest(_url, _form) {
         let formData = new FormData(document.forms[0]);
         let query = new URLSearchParams(formData);
-        _url = _url + "?" + query.toString();
-        let response = await fetch(_url);
-        let data = await response.text();
         if (_form == "html") {
+            _url = _url + "/html" + "?" + query.toString();
+            let response = await fetch(_url);
+            let data = await response.text();
             target.innerHTML = data;
         }
         if (_form == "json") {
+            _url = _url + "/json" + "?" + query.toString();
+            let response = await fetch(_url);
+            let data = await response.json();
             console.log(data);
         }
     }

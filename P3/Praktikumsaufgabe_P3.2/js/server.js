@@ -22,10 +22,16 @@ var P3_2;
         _response.setHeader("Access-Control-Allow-Origin", "*");
         if (_request.url) {
             let url = Url.parse(_request.url, true);
-            let htmlResponse = "<div>Your username is: " + url.query.login + "</div><div>" + "Your password is: " + url.query.password + "</div>";
+            //let htmlResponse: string = "<div>Your username is: " + url.query.login + "</div><div>" + "Your password is: " + url.query.password + "</div>";
             let jsonResponse = JSON.stringify(url.query);
-            let responses = [htmlResponse, jsonResponse];
-            _response.write(JSON.stringify(responses));
+            if (url.pathname == "/html") {
+                for (let key in url.query) {
+                    _response.write("<div>Your " + key + " is: " + url.query[key] + "</div>");
+                }
+            }
+            if (url.pathname == "/json") {
+                _response.write(jsonResponse);
+            }
         }
         _response.end();
     }
