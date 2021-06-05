@@ -28,7 +28,7 @@ export namespace P3_2 {
       let htmlResponse: string = "<div>Your username is: " + url.query.login + "</div><div>" + "Your password is: " + url.query.password + "</div>";
 
       _response.write(htmlResponse);
-      console.log(url);
+      console.log(url.query[1]);
     }
 
 
