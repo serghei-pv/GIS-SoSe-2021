@@ -29,7 +29,7 @@ export namespace P3_4 {
         students = mongoClient.db("Highschool").collection("Students");
     }
 
-    connectToDB("mongodb+srv://userGIS:<GISecure>@clusterraster.u3qcg.mongodb.net");
+    connectToDB("mongodb+srv://userGIS:GISecure@clusterraster.u3qcg.mongodb.net/Highschool?retryWrites=true&w=majority");
 
     async function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): Promise<void> {
         console.log("Action recieved");

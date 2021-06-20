@@ -25,7 +25,7 @@ var P3_4;
         await mongoClient.connect();
         students = mongoClient.db("Highschool").collection("Students");
     }
-    connectToDB("mongodb+srv://userGIS:<GISecure>@clusterraster.u3qcg.mongodb.net");
+    connectToDB("mongodb+srv://userGIS:GISecure@clusterraster.u3qcg.mongodb.net/Highschool?retryWrites=true&w=majority");
     async function handleRequest(_request, _response) {
         console.log("Action recieved");
         _response.setHeader("Access-Control-Allow-Origin", "*");
