@@ -15,8 +15,9 @@ var P3_4;
     server.addListener("listening", handleListen);
     server.listen(port);
     function handleListen() {
-        console.log("Listening");
+        console.log("Looking for Action");
     }
+    let dbURL = "mongodb+srv://userGIS:GISecure@clusterraster.u3qcg.mongodb.net";
     let students;
     let result;
     async function connectToDB(_url) {
@@ -25,21 +26,21 @@ var P3_4;
         await mongoClient.connect();
         students = mongoClient.db("Highschool").collection("Students");
     }
-    connectToDB("mongodb+srv://userGIS:GISecure@clusterraster.u3qcg.mongodb.net/Highschool?retryWrites=true&w=majority");
+    connectToDB(dbURL);
     async function handleRequest(_request, _response) {
         console.log("Action recieved");
         _response.setHeader("Access-Control-Allow-Origin", "*");
         _response.setHeader("content-type", "text/html; charset=utf-8");
         if (_request.url) {
             let url = Url.parse(_request.url, true);
-            if (url.pathname == "/defaultsend") {
+            if (url.pathname == "/send") {
                 students.insertOne(url.query);
                 _response.write("<div>The following Data has been added to the Database:</div>");
                 for (let key in url.query) {
                     _response.write("<div>" + key + ": " + url.query[key] + "</div>");
                 }
             }
-            if (url.pathname == "/defaultrecieve") {
+            if (url.pathname == "/recieve") {
                 let cursor = students.find();
                 result = await cursor.toArray();
                 _response.write(JSON.stringify(result));

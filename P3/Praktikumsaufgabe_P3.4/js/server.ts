@@ -14,9 +14,10 @@ export namespace P3_4 {
     server.listen(port);
 
     function handleListen(): void {
-        console.log("Listening");
+        console.log("Looking for Action");
     }
 
+    let dbURL: string = "mongodb+srv://userGIS:GISecure@clusterraster.u3qcg.mongodb.net";
     let students: Mongo.Collection;
     let result: Student[];
 
@@ -29,7 +30,7 @@ export namespace P3_4 {
         students = mongoClient.db("Highschool").collection("Students");
     }
 
-    connectToDB("mongodb+srv://userGIS:GISecure@clusterraster.u3qcg.mongodb.net/Highschool?retryWrites=true&w=majority");
+    connectToDB(dbURL);
 
     async function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): Promise<void> {
         console.log("Action recieved");
@@ -39,7 +40,7 @@ export namespace P3_4 {
         if (_request.url) {
             let url: Url.UrlWithParsedQuery = Url.parse(_request.url, true);
 
-            if (url.pathname == "/defaultsend") {
+            if (url.pathname == "/send") {
                 students.insertOne(url.query);
 
                 _response.write("<div>The following Data has been added to the Database:</div>");
@@ -49,7 +50,7 @@ export namespace P3_4 {
                 }
             }
 
-            if (url.pathname == "/defaultrecieve") {
+            if (url.pathname == "/recieve") {
                 let cursor: Mongo.Cursor = students.find();
                 result = await cursor.toArray();
                 _response.write(JSON.stringify(result));
