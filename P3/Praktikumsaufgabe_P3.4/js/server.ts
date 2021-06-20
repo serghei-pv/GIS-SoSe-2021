@@ -62,8 +62,10 @@ export namespace P3_4 {
 
     interface Student {
         name: string;
-        nickname: string;
         surname: string;
+        gender: string;
+        age: number;
+        nationality: string;
         _id: Mongo.ObjectID;
     }
 }
