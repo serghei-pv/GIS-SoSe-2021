@@ -45,11 +45,11 @@ var P3_4;
                 result = await cursor.toArray();
                 for (let i in result) {
                     _response.write("<p>" + "If of the Student: " + result[i]._id + "</p>" +
-                        "<div>" + "Name of the Student: " + result[i].name + "</p>" +
-                        "<div>" + "Surname of the Student: " + result[i].surname + "</p>" +
-                        "<div>" + "Gender of the Student: " + result[i].gender + "</p>" +
-                        "<div>" + "Age of the Student: " + result[i].age + "</p>" +
-                        "<div>" + "Nationality of the Student: " + result[i].nationality + "</p>");
+                        "<p>" + "Name of the Student: " + result[i].name + "</p>" +
+                        "<p>" + "Surname of the Student: " + result[i].surname + "</p>" +
+                        "<p>" + "Gender of the Student: " + result[i].gender + "</p>" +
+                        "<p>" + "Age of the Student: " + result[i].age + "</p>" +
+                        "<p>" + "Nationality of the Student: " + result[i].nationality + "</p>");
                 }
             }
             _response.end();
