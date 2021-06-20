@@ -53,7 +53,7 @@ export namespace P3_4 {
             if (url.pathname == "/recieve") {
                 let cursor: Mongo.Cursor = students.find();
                 result = await cursor.toArray();
-                _response.write(JSON.stringify(result));
+                _response.write("<div>" + JSON.stringify(result) + "</div>");
             }
 
             _response.end();
