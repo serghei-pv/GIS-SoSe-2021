@@ -45,7 +45,7 @@ var P3_4;
                 result = await cursor.toArray();
                 _response.write("<div>List of all Students in the Database:</div>");
                 for (let i in result) {
-                    _response.write("<div>" + " " + "</div>" +
+                    _response.write("<div>" + "- " + "</div>" +
                         "<div>" + "<p>" + "Id of the Student: " + result[i]._id + "</p>" +
                         "<p>" + "Name of the Student: " + result[i].name + "</p>" +
                         "<p>" + "Surname of the Student: " + result[i].surname + "</p>" +
