@@ -44,7 +44,6 @@ export namespace P3_4 {
                 students.insertOne(url.query);
 
                 _response.write("<div>The following Data has been added to the Database:</div>");
-
                 for (let key in url.query) {
                     _response.write("<div>" + key + ": " + url.query[key] + "</div>");
                 }
@@ -53,7 +52,14 @@ export namespace P3_4 {
             if (url.pathname == "/recieve") {
                 let cursor: Mongo.Cursor = students.find();
                 result = await cursor.toArray();
-                _response.write("<div>" + JSON.stringify(result) + "</div>");
+                for (let i in result) {
+                    _response.write("<p>" + "If of the Student: " + result[i]._id + "</p>" +
+                        "<div>" + "Name of the Student: " + result[i].name + "</p>" +
+                        "<div>" + "Surname of the Student: " + result[i].surname + "</p>" +
+                        "<div>" + "Gender of the Student: " + result[i].gender + "</p>" +
+                        "<div>" + "Age of the Student: " + result[i].age + "</p>" +
+                        "<div>" + "Nationality of the Student: " + result[i].nationality  + "</p>");
+                }
             }
 
             _response.end();

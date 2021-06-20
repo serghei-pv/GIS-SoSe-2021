@@ -43,7 +43,14 @@ var P3_4;
             if (url.pathname == "/recieve") {
                 let cursor = students.find();
                 result = await cursor.toArray();
-                _response.write("<div>" + JSON.stringify(result) + "</div>");
+                for (let i in result) {
+                    _response.write("<p>" + "If of the Student: " + result[i]._id + "</p>" +
+                        "<div>" + "Name of the Student: " + result[i].name + "</p>" +
+                        "<div>" + "Surname of the Student: " + result[i].surname + "</p>" +
+                        "<div>" + "Gender of the Student: " + result[i].gender + "</p>" +
+                        "<div>" + "Age of the Student: " + result[i].age + "</p>" +
+                        "<div>" + "Nationality of the Student: " + result[i].nationality + "</p>");
+                }
             }
             _response.end();
         }
