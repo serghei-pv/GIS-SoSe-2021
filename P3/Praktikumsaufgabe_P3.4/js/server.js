@@ -44,13 +44,12 @@ var P3_4;
                 let cursor = students.find();
                 result = await cursor.toArray();
                 for (let i in result) {
-                    _response.write("<div style = float: left>" + "<p>" + "Id of the Student: " + result[i]._id + "</p>" +
+                    _response.write("<div style = float: left; width: 200px>" + "<p>" + "Id of the Student: " + result[i]._id + "</p>" +
                         "<p>" + "Name of the Student: " + result[i].name + "</p>" +
                         "<p>" + "Surname of the Student: " + result[i].surname + "</p>" +
                         "<p>" + "Gender of the Student: " + result[i].gender + "</p>" +
                         "<p>" + "Age of the Student: " + result[i].age + "</p>" +
-                        "<p>" + "Nationality of the Student: " + result[i].nationality + "</p>" + "</div>" +
-                        "div" + "/div");
+                        "<p>" + "Nationality of the Student: " + result[i].nationality + "</p>" + "</div>");
                 }
             }
             _response.end();
