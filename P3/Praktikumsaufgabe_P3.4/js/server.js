@@ -46,12 +46,12 @@ var P3_4;
                 _response.write("<div>List of all Students in the Database:</div>");
                 for (let i in result) {
                     _response.write("<div>" + "- " + "</div>" +
-                        "<div>" + "<p>" + "Id of the Student: " + result[i]._id + "</p>" +
-                        "<p>" + "Name of the Student: " + result[i].name + "</p>" +
-                        "<p>" + "Surname of the Student: " + result[i].surname + "</p>" +
-                        "<p>" + "Gender of the Student: " + result[i].gender + "</p>" +
-                        "<p>" + "Age of the Student: " + result[i].age + "</p>" +
-                        "<p>" + "Nationality of the Student: " + result[i].nationality + "</p>" + "</div>");
+                        "<div>" + "<p>" + "Id: " + result[i]._id + "</p>" +
+                        "<p>" + "Name: " + result[i].name + "</p>" +
+                        "<p>" + "Surname: " + result[i].surname + "</p>" +
+                        "<p>" + "Gender: " + result[i].gender + "</p>" +
+                        "<p>" + "Age: " + result[i].age + "</p>" +
+                        "<p>" + "Nationality: " + result[i].nationality + "</p>" + "</div>");
                 }
             }
             _response.end();
