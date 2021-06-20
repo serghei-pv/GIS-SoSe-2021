@@ -33,7 +33,7 @@ namespace P3_2 {
         if (_form == "json") {
             _url = _url + "json" + "?" + query.toString();
             let response: Response = await fetch(_url);
-            let data: string = await response.json();
+            let data: JSON = await response.json();
             console.log(data);
         }
     }

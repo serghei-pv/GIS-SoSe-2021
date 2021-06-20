@@ -1,14 +1,15 @@
 {
   "dependencies": {
-    "@types/node": "^15.6.1"
+    "@types/mongodb": "^3.6.18",
+    "@types/node": "^15.6.1",
+    "mongodb": "^3.6.9"
   },
   "name": "gis-sose-2021",
   "description": "Abgeben für das Modul GIS im SoSe 2021",
   "version": "0.0.1",
   "main": "index.js",
-  "devDependencies": {},
   "scripts": {
-    "start": "node P3/Praktikumsaufgabe_P3.2/js/server.js"
+    "start": "node P3/Praktikumsaufgabe_P3.4/js/server.js"
   },
   "repository": {
     "type": "git",
