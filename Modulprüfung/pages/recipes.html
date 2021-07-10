@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bacus - My Recipes</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/script.js" defer></script>
+    <script>
+        // https://github.com/RandScullard/photo-screen-saver/issues/2
+        // TypeScript requires 'exports' global variable.
+        var exports = {};
+    </script>
+</head>
+
+<body>
+
+    <header class="containerHeader">
+
+        <div class="leftHeader">
+            <img src="../media/lightmode_icon.png" class="modeswitch">
+        </div>
+
+        <ul class="menuHeader">
+            <li class="mainNavigation" id="home"> <a href="./index.html">Home</a></li>
+            <li class="mainNavigation" id="favorites"> <a href="./favorites.html">Favorites</a></li>
+            <li class="mainNavigation" id="recipes"> <a href="./recipes.html" class="active">My recipes</a></li>
+        </ul>
+
+        <div class="rightHeader">
+            <a href="./index.html">
+                <h1 class="title"><a href="./index.html">bacus</a></h1>
+        </div>
+
+    </header>
+
+    <main class="containerMain">
+
+        <div class="leftMain">
+            <form id="creatorForm">
+                <h3>Foreword</h3>
+                <div id="createForeword">So there was a chicken in my village that always used to cross the road...
+                </div>
+                <h3>Ingridients</h3>
+                <div id="createIngridients">A lot of Javascript.</div>
+                <h3>Instructions</h3>
+                <div id="createInstructions">Aaand done! Enjoy your sugar free honey.</div>
+            </form>
+        </div>
+
+        <ul class="rightMain" id="myRecipeList">
+            <li id="recipeCreation">Create recipe</li>
+        </ul>
+
+    </main>
+
+</body>
+
+</html>

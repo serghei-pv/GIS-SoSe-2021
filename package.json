@@ -9,7 +9,7 @@
   "version": "0.0.1",
   "main": "index.js",
   "scripts": {
-    "start": "node P3/Praktikumsaufgabe_P3.4/js/server.js"
+    "start": "node Modulprüfung/js/server.js"
   },
   "repository": {
     "type": "git",
