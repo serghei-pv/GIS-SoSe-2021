@@ -64,22 +64,23 @@ var bacus;
                 }
             }
             if (url.pathname == "/register") {
-                if (allUser.length == 0) {
+                if (allUser.length == 0 && url.query.password == url.query.passwordConfirm) {
                     userbase.insertOne(url.query);
                     _response.write(url.query.username);
                 }
-                for (let i in allUser) {
-                    if (allUser[i].username == url.query.username) {
-                        _response.write("Username already exists!");
-                        break;
-                    }
-                    else if (url.query.password != url.query.passwordConfirm) {
-                        _response.write("Passwords do not match!");
-                        break;
-                    }
-                    if (((allUser[i].username != url.query.username) && (url.query.password == url.query.passwordConfirm))) {
-                        userbase.insertOne(url.query);
-                        break;
+                else if ((url.query.password != url.query.passwordConfirm)) {
+                    _response.write("Passwords do not match!");
+                }
+                else if ((url.query.password == url.query.passwordConfirm)) {
+                    for (let i in allUser) {
+                        if (allUser[i].username == url.query.username) {
+                            _response.write("Username already exists!");
+                            break;
+                        }
+                        if (allUser[i].username != url.query.username) {
+                            userbase.insertOne(url.query);
+                            break;
+                        }
                     }
                 }
             }
