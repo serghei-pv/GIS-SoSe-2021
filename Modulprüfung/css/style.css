@@ -34,8 +34,11 @@ a, .lrbutton, .lrinput {
     color: black;
 }
 
-a.active, a.showIngridient, .showRecipeButton:focus {
-    text-decoration: overline;
+a.active, a.showIngridient, .showRecipeButton:focus {    
+    border-style: double;
+    border-top: none;
+    border-left: none;
+    border-right: none;
 }
 
 .lr {
