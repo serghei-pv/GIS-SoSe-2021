@@ -387,7 +387,7 @@ export namespace bacus {
                     foreword.innerHTML = recipeArrayData[i].foreword;
                     for (let key in recipeArrayData[i].ingridient) {
 
-                        let formIngridients: HTMLSpanElement = <HTMLSpanElement>document.createElement("SPAN");
+                        let formIngridients: HTMLDivElement = <HTMLDivElement>document.createElement("DIV");
                         formIngridients.innerHTML = recipeArrayData[i].ingridient[key];
                         formIngridients.setAttribute("type", "text");
                         ingridients.insertBefore(formIngridients, ingridients.childNodes[ingridientCounter]);

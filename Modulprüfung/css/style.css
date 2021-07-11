@@ -155,7 +155,7 @@ a.active, a.showIngridient, .showRecipeButton:focus {
 }
 
 .showIngridient {
-    width: 17%;
+    width: 100%;
     margin-right: 5%;
 }
 

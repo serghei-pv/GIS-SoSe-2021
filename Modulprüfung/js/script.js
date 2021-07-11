@@ -326,7 +326,7 @@ var bacus;
                     formRecipeName.innerHTML = recipeArrayData[i].title;
                     foreword.innerHTML = recipeArrayData[i].foreword;
                     for (let key in recipeArrayData[i].ingridient) {
-                        let formIngridients = document.createElement("SPAN");
+                        let formIngridients = document.createElement("DIV");
                         formIngridients.innerHTML = recipeArrayData[i].ingridient[key];
                         formIngridients.setAttribute("type", "text");
                         ingridients.insertBefore(formIngridients, ingridients.childNodes[ingridientCounter]);
