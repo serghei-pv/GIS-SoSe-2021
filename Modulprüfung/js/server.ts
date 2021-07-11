@@ -79,6 +79,7 @@ export namespace bacus {
 
                 if (allUser.length == 0) {
                     userbase.insertOne(url.query);
+                    _response.write(url.query.username);
                 }
 
                 for (let i in allUser) {
@@ -94,7 +95,6 @@ export namespace bacus {
 
                     if (((allUser[i].username != url.query.username) && (url.query.password == url.query.passwordConfirm))) {
                         userbase.insertOne(url.query);
-                        _response.write("Account succesfully created.");
                         break;
                     }
                 }
@@ -102,7 +102,6 @@ export namespace bacus {
 
             if (url.pathname == "/createRecipe") {
                 recipeCollection.insertOne(url.query);
-                _response.write("Recipe has been added to the database");
             }
 
             if (url.pathname == "/loadRecipe") {
@@ -115,7 +114,6 @@ export namespace bacus {
                 for (let i in allRecipes) {
                     if (url.query._id == JSON.stringify(allRecipes[i]._id)) {
                         recipeCollection.deleteOne({ _id: new Mongo.ObjectId(JSON.parse(url.query._id)) });
-                        _response.write("Deleted");
                     }
                 }
             }
@@ -137,7 +135,6 @@ export namespace bacus {
                 for (let i in allRecipes) {
                     if (url.query._id == JSON.stringify(allRecipes[i]._id)) {
                         recipeCollection.updateOne({ _id: new Mongo.ObjectId(JSON.parse(url.query._id)) }, { $set: { title: JSON.parse(title), foreword: JSON.parse(foreword), ingridient: JSON.parse(ingridient), instruction: JSON.parse(instruction) } });
-                        _response.write("Recipe has been edited.");
                     }
                 }
             }

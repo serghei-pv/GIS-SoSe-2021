@@ -19,6 +19,7 @@ export namespace bacus {
     let favoritesList: HTMLUListElement = <HTMLUListElement>document.getElementById("favoritesList");
     let loginError: HTMLDivElement = <HTMLDivElement>document.getElementById("loginError");
     let registerError: HTMLDivElement = <HTMLDivElement>document.getElementById("registerError");
+    let signIn: HTMLDivElement = <HTMLDivElement>document.getElementById("signin");
 
     let editDeleteContainer: HTMLDivElement = <HTMLDivElement>document.createElement("DIV");
     let formRecipeName: HTMLInputElement = <HTMLInputElement>document.createElement("INPUT");
@@ -28,6 +29,9 @@ export namespace bacus {
     let formInstrucions: HTMLInputElement = <HTMLInputElement>document.createElement("INPUT");
     let submitButton: HTMLButtonElement = <HTMLButtonElement>document.createElement("BUTTON");
     let submitEdit: HTMLButtonElement = <HTMLButtonElement>document.createElement("BUTTON");
+
+    editDeleteContainer.className = "eDContainer";
+
 
     let host: string = "http://localhost:8100/";
 
@@ -108,22 +112,29 @@ export namespace bacus {
     if (currentPage == "register.html") {
         registerButton.addEventListener("click", register);
     }
-    if (currentPage == "index.html") {
+
+    if (currentPage == "index.html" || currentPage == "favorites.html" || currentPage == "recipes.html") if (sessionStorage.getItem("login") == "true") {        
         showMenu();
+        if (sessionStorage.getItem("login") == "true") {
+            signIn.innerHTML = "<a href='./login.html'>Log out</a>";
+            signIn.addEventListener("click", logOut);
+        } else {
+            signIn.innerHTML = "<a href='./login.html'>Sign in / up</a>";
+        }
+    }
+
+    if (currentPage == "index.html") {
 
         if (sessionStorage.getItem("login") == "true") {
-            document.getElementById("signin").style.visibility = "hidden";
             indexRecipe.insertBefore(editDeleteContainer, indexRecipe.childNodes[0]);
         }
     }
 
     if (currentPage == "favorites.html") {
-        showMenu();
         favoriteRecipe.insertBefore(editDeleteContainer, favoriteRecipe.childNodes[0]);
     }
 
     if (currentPage == "recipes.html") {
-        showMenu();
         createRecipe.addEventListener("click", recipeForm);
 
         creatorForm.insertBefore(editDeleteContainer, creatorForm.childNodes[0]);
@@ -131,15 +142,13 @@ export namespace bacus {
 
         formRecipeName.setAttribute("type", "text");
         formRecipeName.setAttribute("name", "title");
-        formRecipeName.className = "ingridientsAndButtons";
+        formRecipeName.className = "createTitle";
 
         formInstrucions.setAttribute("name", "instructions");
 
         formForeword.setAttribute("type", "text");
         formForeword.setAttribute("name", "foreword");
         formForeword.className = "formTitleIngridientInstruction";
-
-        ingridients.style.width = "75%";
 
         formIngridients.setAttribute("type", "text");
         formIngridients.setAttribute("name", "ingridient");
@@ -228,6 +237,7 @@ export namespace bacus {
             resetSubmit(createRecipeInfo);
         } else {
             console.log("Fill out everything!");
+            editDeleteContainer.innerHTML = "Fill out everything!";
         }
     }
 
@@ -246,7 +256,13 @@ export namespace bacus {
             resetSubmit(submitEditInfo);
         } else {
             console.log("Fill out everything!");
+            editDeleteContainer.innerHTML = "Fill out everything!";
+
         }
+    }
+
+    function logOut(): void {
+        sessionStorage.setItem("login", "false");
     }
 
     async function processRequest(_url: RequestInfo, _info: string): Promise<void> {
@@ -277,9 +293,8 @@ export namespace bacus {
             _url += registerInfo + "?" + query.toString();
             response = await fetch(_url);
             textData = await response.text();
-            console.log(textData);
 
-            if (textData == "Account succesfully created") {
+            if (textData == username) {
                 sessionStorage.setItem("login", "true");
                 sessionStorage.setItem("user", username);
                 window.location.href = "../pages/index.html";
@@ -292,7 +307,6 @@ export namespace bacus {
             _url += createRecipeInfo + "?" + query.toString() + "&user=" + sessionStorage.getItem("user");
             response = await fetch(_url);
             textData = await response.text();
-            console.log(textData);
             window.location.reload();
         }
 
@@ -351,7 +365,13 @@ export namespace bacus {
                 function loadRecipe(): void {
                     if (recipeCreation) {
                         creatorForm.removeChild(formRecipeName);
-                        myRecipeList.removeChild(submitButton);
+
+                        if (myRecipeList.querySelector(".submitButton").innerHTML == "Submit recipe") {
+                            myRecipeList.removeChild(submitButton);
+                        }
+                        else if (myRecipeList.querySelector(".submitButton").innerHTML == "Submit edit") {
+                            myRecipeList.removeChild(submitEdit);
+                        }
                     }
 
                     sessionStorage.setItem("lastClickedRecipe", JSON.stringify(recipeArrayData[i]._id));
@@ -405,11 +425,7 @@ export namespace bacus {
         if (_info == deleteInfo) {
             _url += deleteInfo + "?" + "_id=" + sessionStorage.getItem("lastClickedRecipe");
             response = await fetch(_url);
-            textData = await response.text();
-            console.log(textData);
-            if (textData == "Deleted") {
-                window.location.reload();
-            }
+            window.location.reload();
         }
 
         if (_info == editInfo) {
@@ -445,8 +461,6 @@ export namespace bacus {
         if (_info == submitEditInfo) {
             _url += submitEditInfo + "?" + query.toString() + "&_id=" + sessionStorage.getItem("lastClickedRecipe");
             response = await fetch(_url);
-            textData = await response.text();
-            console.log(textData);
             window.location.reload();
         }
 
@@ -454,14 +468,14 @@ export namespace bacus {
             _url += favoriteInfo + "?" + "_id=" + sessionStorage.getItem("lastClickedRecipe") + "&username=" + sessionStorage.getItem("user");
             response = await fetch(_url);
             textData = await response.text();
-            console.log(textData);
+            editDeleteContainer.innerHTML = textData;
         }
 
         if (_info == removeFavoriteInfo) {
             _url += removeFavoriteInfo + "?" + "_id=" + sessionStorage.getItem("lastClickedRecipe") + "&username=" + sessionStorage.getItem("user");
             response = await fetch(_url);
             textData = await response.text();
-            console.log(textData);
+            editDeleteContainer.innerHTML = textData;
         }
     }
 }

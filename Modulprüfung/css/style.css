@@ -1,19 +1,20 @@
-html, body {
-    height: 100%;
-}
-
 body {
     background: -webkit-linear-gradient(to right, #78ffd6, #a8ff78);
     background: linear-gradient(to right, #78ffd6, #a8ff78);
-    font-size: 20px;
     font-family: "Montserrat", sans-serif;
+}
+
+.darkMode {
+    background: -webkit-linear-gradient(to right, #734b6d, #42275a);
+    background: linear-gradient(to right, #734b6d, #42275a);
+    color: white;
 }
 
 body, h1, h2, .rightMain {
     margin: 0;
 }
 
-h2, .leftHeader, .rightHeader, .lrtext, .rightMain {
+h2, .leftHeader, .rightHeader, .lrtext, .rightMain, #loginError, #registerError {
     text-align: center;
 }
 
@@ -27,16 +28,19 @@ li {
 
 a {
     text-decoration: none;
+}
+
+a, .lrbutton, .lrinput {
     color: black;
 }
 
 a.active, a.showIngridient, .showRecipeButton:focus {
-    text-decoration: overline;   
+    text-decoration: overline;
 }
 
 .lr {
-    margin-left: 40%;
-    margin-top: 10%;
+    margin: auto;
+    padding-top: 10%;
     width: 350px;
 }
 
@@ -53,49 +57,56 @@ a.active, a.showIngridient, .showRecipeButton:focus {
     justify-content: space-between;
 }
 
+.containerHeader {
+    position: fixed;
+    width: 100%;
+    background: -webkit-linear-gradient(to right, #78ffd6, #a8ff78);
+    background: linear-gradient(to right, #78ffd6, #a8ff78);
+}
+
+.containerHeader, .rightMain {
+    box-shadow: 0px 0px 5px;
+}
+
 .containerMain {
-    height: 91%;
+    padding-top: 5%;
 }
 
 .leftHeader, .leftMain {
     order: 1;
 }
 
-.leftHeader, .rightHeader, .rightMain {
-    width: 15%;
+.leftMain {
+    padding: 5%;
 }
 
-.leftHeader {
-    padding-top: 1%;
+.leftHeader, .rightHeader, .rightMain {
+    width: 15%;
 }
 
 .menuHeader, .rightMain {
     order: 2;
 }
 
-.menuHeader {
+.menuHeader, .leftHeader, .rightHeader {
     padding-top: 1%;
 }
 
 .rightHeader {
     order: 3;
-    padding-top: 1%;
-}
-
-.leftMain, .rightMain {
-    padding-top: 3%;
 }
 
 .leftMain {
     width: 85%;
 }
 
-.rightMain {
-    margin-top: 25px;
-}
-
 .rightMain, .lrinput {
     padding: 0;
+}
+
+.rightMain {
+    margin-top: -2%;
+    padding-top: 5%;
 }
 
 .lrContainer {
@@ -104,13 +115,6 @@ a.active, a.showIngridient, .showRecipeButton:focus {
 }
 
 .lrbutton, .lrinput {
-    border-width: 1px;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-color: black;
-    color: black;
-    background-color: transparent;
     width: 350px;
     height: 35px;
 }
@@ -129,88 +133,99 @@ a.active, a.showIngridient, .showRecipeButton:focus {
     margin-bottom: 20px;
 }
 
-.formTitleIngridientInstruction {
-    font-size: 20px;
-    width: 75%;
-    margin-left: 1%;
-    background: transparent;
-    border-color: black;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-width: 1px;
+.formTitleIngridientInstruction, .createTitle, .showRecipeButton, #createIngridients {
+    width: 100%;
 }
 
-.ingridientsAndButtons {
-    font-size: 20px;
-    width: 17%;
+.ingridientsAndButtons, .addIngridientsButton {
+    width: 19%;
     margin-left: 5%;
-    background: transparent;
-    padding: 0;
-    border-color: black;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-width: 1px;
-}
-
-.addIngridientsButton {
-    font-size: 20px;
-    width: 17%;
-    margin-left: 5%;
-    background: transparent;
-    padding: 0;
-    border-color: black;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-width: 1px;
-    cursor: pointer;
 }
 
 .submitButton {
-    font-size: 20px;
-    background: transparent;
-    padding: 0;
-    border-color: black;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-width: 1px;
-    cursor: pointer;
+    margin-bottom: 5%;
 }
 
 .showRecipeButton {
-    font-size: 20px;
-    width: 100%;
     margin-top: 15px;
-    background: transparent;
-    padding: 0;
     border: none;
-    cursor: pointer;
 }
 
 .showIngridient {
-    font-size: 20px;
     width: 17%;
     margin-right: 5%;
 }
 
-.editDeleteButton {
+#loginError, #registerError {
+    color: red;
+    padding-bottom: 5%;
+}
+
+.eDContainer {
+    text-align: right;
+}
+
+.editDeleteButton, .showRecipeButton, .submitButton, .addIngridientsButton, .createTitle, .ingridientsAndButtons, .formTitleIngridientInstruction, body, .showIngridient {
     font-size: 20px;
+}
+
+.editDeleteButton {
     margin-right: 15px;
-    background: transparent;
+}
+
+.editDeleteButton, .submitButton, .addIngridientsButton, .createTitle, .ingridientsAndButtons, .showRecipeButton {
     padding: 0;
+}
+
+.editDeleteButton, .submitButton, .addIngridientsButton, .createTitle, .ingridientsAndButtons, .lrbutton, .lrinput, .formTitleIngridientInstruction {
     border-color: black;
     border-top: none;
     border-left: none;
     border-right: none;
     border-width: 1px;
+}
+
+.editDeleteButton, .submitButton, .showRecipeButton, .addIngridientsButton, .formTitleIngridientInstruction, .ingridientsAndButtons, .createTitle, .lrbutton, .lrinput {
+    background: transparent;
+}
+
+.editDeleteButton, .submitButton, .showRecipeButton, .addIngridientsButton {
     cursor: pointer;
 }
 
-#loginError, #registerError {
-    text-align: center;
-    color: red;
-    padding-bottom: 5%;
+.logInOut {
+    margin: 20px;
+}
+
+@media only screen and (max-width: 1024px) {
+    .leftHeader, .rightHeader, .rightMain {
+        width: 15%;
+    }
+    .leftMain {
+        width: 75%;
+    }
+    .leftHeader {
+        padding-left: 5%;
+    }
+    .rightHeader {
+        padding-right: 5%;
+    }
+    #recipeCreation {
+        padding-top: 50%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .editDeleteButton, .showRecipeButton, .submitButton, .addIngridientsButton, .createTitle, .ingridientsAndButtons, .formTitleIngridientInstruction, body, .showIngridient {
+        font-size: 15px;
+    }
+    .leftMain {
+        padding-top: 15%;
+    }
+    .rightMain {
+        padding-top: 10%;
+    }
+    .modeswitch {
+        margin-top: 10px;
+    }
 }
