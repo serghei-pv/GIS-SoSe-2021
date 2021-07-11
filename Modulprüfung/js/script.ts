@@ -126,6 +126,8 @@ export namespace bacus {
     if (currentPage == "index.html") {
         showMenu();
         if (sessionStorage.getItem("login") == "true") {
+            //https://stackoverflow.com/questions/2007357/how-to-set-dom-element-as-the-first-child
+            //nemisj
             indexRecipe.insertBefore(editDeleteContainer, indexRecipe.childNodes[0]);
         }
     }
@@ -371,6 +373,8 @@ export namespace bacus {
                     if (recipeCreation) {
                         creatorForm.removeChild(formRecipeName);
 
+                        //Chirag Ravindra
+                        //https://stackoverflow.com/questions/48494416/get-child-element-from-event-target
                         if (myRecipeList.querySelector(".submitButton").innerHTML == "Submit recipe") {
                             myRecipeList.removeChild(submitButton);
                         }

@@ -34,7 +34,7 @@ a, .lrbutton, .lrinput {
     color: black;
 }
 
-a.active, a.showIngridient, .showRecipeButton:focus {    
+a.active, a.showIngridient, .showRecipeButton:focus {
     border-style: double;
     border-top: none;
     border-left: none;
