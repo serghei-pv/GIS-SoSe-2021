@@ -29,7 +29,8 @@ var bacus;
     let submitButton = document.createElement("BUTTON");
     let submitEdit = document.createElement("BUTTON");
     editDeleteContainer.className = "eDContainer";
-    let host = "http://localhost:8100/";
+    //let host: string = "http://localhost:8100/";
+    let host = "https://pav-lov.herokuapp.com/";
     let loginInfo = "login";
     let registerInfo = "register";
     let createRecipeInfo = "createRecipe";
@@ -97,7 +98,6 @@ var bacus;
     }
     if (currentPage == "index.html" || currentPage == "favorites.html" || currentPage == "recipes.html")
         if (sessionStorage.getItem("login") == "true") {
-            showMenu();
             if (sessionStorage.getItem("login") == "true") {
                 signIn.innerHTML = "<a href='./login.html'>Log out</a>";
                 signIn.addEventListener("click", logOut);
@@ -107,14 +107,20 @@ var bacus;
             }
         }
     if (currentPage == "index.html") {
+        showMenu();
         if (sessionStorage.getItem("login") == "true") {
             indexRecipe.insertBefore(editDeleteContainer, indexRecipe.childNodes[0]);
         }
     }
     if (currentPage == "favorites.html") {
+        showMenu();
         favoriteRecipe.insertBefore(editDeleteContainer, favoriteRecipe.childNodes[0]);
     }
     if (currentPage == "recipes.html") {
+        showMenu();
+        if (sessionStorage.getItem("login") != "true") {
+            createRecipe.style.visibility = "hidden";
+        }
         createRecipe.addEventListener("click", recipeForm);
         creatorForm.insertBefore(editDeleteContainer, creatorForm.childNodes[0]);
         formRecipeName.setAttribute("type", "text");

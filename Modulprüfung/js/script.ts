@@ -33,7 +33,8 @@ export namespace bacus {
     editDeleteContainer.className = "eDContainer";
 
 
-    let host: string = "http://localhost:8100/";
+    //let host: string = "http://localhost:8100/";
+    let host: string = "https://pav-lov.herokuapp.com/";
 
     let loginInfo: string = "login";
     let registerInfo: string = "register";
@@ -113,8 +114,7 @@ export namespace bacus {
         registerButton.addEventListener("click", register);
     }
 
-    if (currentPage == "index.html" || currentPage == "favorites.html" || currentPage == "recipes.html") if (sessionStorage.getItem("login") == "true") {        
-        showMenu();
+    if (currentPage == "index.html" || currentPage == "favorites.html" || currentPage == "recipes.html") if (sessionStorage.getItem("login") == "true") {
         if (sessionStorage.getItem("login") == "true") {
             signIn.innerHTML = "<a href='./login.html'>Log out</a>";
             signIn.addEventListener("click", logOut);
@@ -124,17 +124,22 @@ export namespace bacus {
     }
 
     if (currentPage == "index.html") {
-
+        showMenu();
         if (sessionStorage.getItem("login") == "true") {
             indexRecipe.insertBefore(editDeleteContainer, indexRecipe.childNodes[0]);
         }
     }
 
     if (currentPage == "favorites.html") {
+        showMenu();
         favoriteRecipe.insertBefore(editDeleteContainer, favoriteRecipe.childNodes[0]);
     }
 
     if (currentPage == "recipes.html") {
+        showMenu();
+        if (sessionStorage.getItem("login") != "true") {
+            createRecipe.style.visibility = "hidden";
+        }
         createRecipe.addEventListener("click", recipeForm);
 
         creatorForm.insertBefore(editDeleteContainer, creatorForm.childNodes[0]);
